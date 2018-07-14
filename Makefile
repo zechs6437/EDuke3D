@@ -41,11 +41,11 @@ INCLUDES		:=	build/include source source/jmact source/jaudiolib/include source/e
 #---------------------------------------------------------------------------------
 ARCH	:=	-march=armv6k -mtune=mpcore -mfloat-abi=hard
 
-CFLAGS	:=	-g -Wall -O2 -mword-relocations -std=c99 \
+CFLAGS	:=	-g -Wall -O2 -mword-relocations \
 			-fomit-frame-pointer -ffunction-sections \
 			$(ARCH)
 
-CFLAGS	+=	$(INCLUDE) -DARM11 -D_3DS -DNOASM -std=c99 -DNETCODE_DISABLE -DHAVE_VORBIS
+CFLAGS	+=	$(INCLUDE) -DARM11 -D_3DS -DNOASM -DNETCODE_DISABLE -DHAVE_VORBIS
 
 CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++11
 
@@ -58,7 +58,7 @@ LIBS	:=  -lctru -lm -lvorbisidec -logg -lm
 # list of directories containing libraries, this must be the top level containing
 # include and lib
 #---------------------------------------------------------------------------------
-LIBDIRS	:=  $(CTRULIB) $(DEVKITARM)/portlibs/armv6k
+LIBDIRS	:=  $(CTRULIB) $(PORTLIBS)
 
 
 #---------------------------------------------------------------------------------
